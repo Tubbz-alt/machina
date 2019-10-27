@@ -1,0 +1,11 @@
+class colors:
+    HEADER = '\u001b[95m'
+    BLUE = '\u001b[94m'
+    GREEN = '\u001b[92m'
+    RED = '\u001b[91m'
+    YELLOW = '\u001b[33m'
+    WARNING = '\u001b[93m'
+    FAIL = '\u001b[91m'
+    END = '\u001b[0m'
+    BOLD = '\u001b[1m'
+    UNDERLINE = '\u001b[4m'

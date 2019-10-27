@@ -1,0 +1,9 @@
+.DS_Store
+
+draft_*
+
+node_modules
+__pycache__
+.ipynb_checkpoints
+.vscode
+.venv
