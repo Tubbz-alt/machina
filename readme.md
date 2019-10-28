@@ -26,8 +26,7 @@ Machina automates the boring stuff and stays out of your way when it comes to th
 
 **To get started:**
 * Read the **[documentation](docs/readme.md)**!
-* Follow the **[tutorial](docs/tutorial.md)**!!
-* Checkout the **[example](example)**!!!
+* Checkout the **[example](example)**!!
 
 If you want to learn about our research on/with machina, all the gory details are included in the following paper: [probably an arXiv link]...
 
