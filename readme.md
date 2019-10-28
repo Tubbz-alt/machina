@@ -180,7 +180,7 @@ TODO
 
 ## Feedback/Questions/Contributing
 
-:mail: [@jonathandinu](https://twitter.com/jonathandinu)
+📧 [@jonathandinu](https://twitter.com/jonathandinu)
 
 ## License
 
