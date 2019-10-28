@@ -8,6 +8,7 @@ Machina combines an intuitive **experimentation framework** (think A/B tests) wi
 
 Machina automates the boring stuff and stays out of your way when it comes to the fun/interesting stuff. The framework combines an intuitive Flask-like web framework, built-in deployment and devops functionality, and Mechanical Turk management/orchestration. Specifically it provides utilities for adaptive experimentation, metrics and measures, templates and UI, data storage, participant management and authorization, experiment serialization and replication, application deployment, MTurk orchestration, a monitoring/admin dashboard, and statistical analysis helpers.  
 
+<hr> 
 
 **Use machina if you want:**
 * Amazon Mechanical Turk automation and human orchestration for intelligent human-in-the-loop systems
@@ -32,7 +33,7 @@ Machina automates the boring stuff and stays out of your way when it comes to th
 
 <br>
 
-If you want to learn about our research on/with machina, all the gory details are included in the following paper: probably an arXiv link...
+If you want to learn about our research on/with machina, all the gory details are included in the following paper: [probably an arXiv link]...
 
 > machina is compatible with Python 3.x
 
@@ -110,7 +111,7 @@ More than the development gains from using the library, we feel that these abstr
 
 ``` -->
 
-See the full annotated and runnable example code [here](examples/experiment.py).
+See the full annotated and runnable example code [here](example).
 
 ## Installation
 
@@ -125,9 +126,9 @@ git clone https://github.com/hopelessoptimism/machina.git
 cd machina && python setup.py install
 ```
 
-## Quickstart
+<!-- ## Quickstart
 
-## Gotchas
+## Gotchas -->
 
 
 ## What's in here?!
@@ -136,17 +137,17 @@ The main functionality the library provides is a standardized set of datasets, t
 
 At a high level, `machina` can be thought of as a compiler for interpretable machine learning human subjects experiments, but instead of generating code this compiler translates your experiment specification-- datasets, models, and explainers  --into the necessary variants to evaluate. The framework outputs HTML interfaces, instruments them with measures to run your experiment with human subjects (and optionally deploys these experiments to crowdworker platforms like Amazon's Mechanical Turk).
 
+<!-- 
+
 ### Datasets and tasks
 
 * existing ML benchmark datasets used in other experiments
 * XAI specific datasets
 
-
 ### Interpretable Models
 
 * Decision Sets
 * BRL
-
 
 ### Explainers
 
@@ -169,7 +170,6 @@ At a high level, `machina` can be thought of as a compiler for interpretable mac
     * text with highlights
     * Activation visualization
 
-<!-- 
 TODO
 
 - combinatorial exploration of design space.
@@ -189,17 +189,11 @@ TODO
 * [SHAP](https://github.com/slundberg/shap)
 * [lime](https://github.com/marcotcr/lime)
 
-## Feedback/Questions
+## Feedback/Questions/Contributing
 
-## Contributing
+Talk to [@jonathandinu](https://twitter.com/jonathandinu)
 
-## Citation
 
-TODO
-
-## License
-
-TODO
 
 ## Standing on the shoulders of giants...
 
@@ -211,7 +205,7 @@ TODO
 - numpy
 - boto
 - dominate
-
+<!-- 
 ## TODO (roughly in order of priority)
 
 ### Soon
@@ -241,4 +235,4 @@ TODO
 - [ ] add proper type annotations for Pyre/mypy
 - [ ] Statistical analysis helpers for results 
 - [ ] Interface serialization with Dash
-- [ ] add interactive notebooks with Binder
+- [ ] add interactive notebooks with Binder -->
