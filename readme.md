@@ -44,7 +44,6 @@ For instance only certain types of model are compatible with a given explinaer o
 
 - need to iterate quickly, no problem. traditionally the experiment workflow is very slow. design experiment, build experiment, pilot experiemnt, tweak experiment implementation, run at scale with subjects on MTruk. But if you want to test a slight variation or compare a new manipulation or use new measures you often have to start from scratch again. need to change parameters of an experiment, this framework intelligently figures out which trials from your experiment specification need to be rerun.
 
--->
 
 ## Quickstart
 
@@ -56,6 +55,8 @@ machina new iml-experiment
 cd iml-experiment
 
 machina 
+```
+-->
 
 ## Goals
 
@@ -104,12 +105,12 @@ More than the development gains from using the library, we feel that these abstr
 
 
 ## One explainy boi
-
+<!-- 
 ```python
 
-```
+``` -->
 
-See the full annotated and runnable example code [here](examples/model_agnostic/experiment.py).
+See the full annotated and runnable example code [here](examples/experiment.py).
 
 ## Installation
 
