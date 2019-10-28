@@ -160,6 +160,14 @@ TODO
 - want to test their method on your experiment, remix your own experiment!
 
  -->
+## Standing on the shoulders of giants...
+
+- [Flask](https://palletsprojects.com/p/flask/)
+- [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [peewee](http://docs.peewee-orm.com/en/latest/)
+- [SQLite](https://www.sqlite.org/index.html)
+- [numpy](https://numpy.org/)
+- [pandas](https://pandas.pydata.org/)
 
 ## See Also
 
@@ -172,13 +180,17 @@ TODO
 
 ## Feedback/Questions/Contributing
 
-Talk to [@jonathandinu](https://twitter.com/jonathandinu)
+:mail: [@jonathandinu](https://twitter.com/jonathandinu)
+
+## License
+
+[LICENSE.mit](LICENSE.mit)
 
 ## Citation
 
 ```
 @software{machina,
-  author = {{Jonathan Dinu}},
+  author = {Jonathan Dinu},
   title = {Machina: A declarative framework for efficient lifelong experiments 
   and budgeted designs for adaptive experimentation on crowd marketplaces},
   url = {https://github.com/hopelessoptimism/machina},
@@ -187,19 +199,6 @@ Talk to [@jonathandinu](https://twitter.com/jonathandinu)
   year = {2019}
 }
 ```
-
-## License
-
-[LICENSE.mit](LICENSE.mit)
-
-## Standing on the shoulders of giants...
-
-- [Flask](https://palletsprojects.com/p/flask/)
-- [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
-- [peewee](http://docs.peewee-orm.com/en/latest/)
-- [SQLite](https://www.sqlite.org/index.html)
-- [numpy](https://numpy.org/)
-- [pandas](https://pandas.pydata.org/)
 
 <!-- 
 ## TODO (roughly in order of priority)
