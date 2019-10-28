@@ -7,7 +7,7 @@ setup(
     author='Jonathan Dinu',
     author_email='jondinu@gmail.com',
     platforms=['any'],
-    license="Apache 2.0",
+    license="MIT",
     url='https://github.com/hopelessoptimism/machina',
     packages=find_packages(),
     python_requires='>=3.6',
