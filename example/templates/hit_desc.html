@@ -1,0 +1,29 @@
+{% extends 'base.html.j2' %}
+
+{% block title %}Instructions{% endblock %}
+
+{% block content %}
+<div class="uk-container">
+    <div id="instructions">
+        <div>
+            <p class="uk-text-bold">Please read the following instructions and look over the screenshot of the interface that you will be using for the HIT. Once you have finished the instructions and feel ready to begin, click the <em>Begin HIT</em> button located at the bottom of this page.
+            </p>
+            <div class="uk-section uk-section-muted uk-padding">
+                <p>For this HIT, you will be presented with a series of 10 examples taken from a dataset of Airbnb listings and the corresponding price per night of the listing. For each example, two different algorithms have been constructed using this dataset to predict the price per night of a listing using only the features of the listing (such as the number of bedrooms, the listing reviews and ratings, the amenities offered, etc.). A description of each feature can be found in the <a href="{{url_for('data_dictionary', _scheme='https', _external=True) }}">data dictionary</a>.
+                <p><span class="uk-text-bold uk-text-emphasis">Your task:</span> For each example, try to determine to the best of your ability which of these two algorithms will perform more accurately in the "real world" on new listings which have not yet had a price set, and provide an estimate of how confident you are in your choice. Do not rush, but please try to select your choice promptly once you have decided on the more accurate algorithm. Each example presented will consist of 2 components:</p>
+                <ol>
+                    <li>The two algorithms' predictions (and error) side-by-side for the same historic listing (which we know the price for).</li>
+                    <li>A chart of the features ranked that each algorithm considers important when making its prediction, and the corresponding weight of that importance. Importance is indicated by the magnitude (absolute value) of the weight: a large positive weight indicating positive correlation between the feature and price, and a large negative weight indicates a negative correlation with price.</li>
+                </ol>
+                <div class="uk-alert-danger" style="border: solid 2px #f0506e;" uk-alert><span class="uk-text-bold">NOTE:</span> The algorithm with the lower error on the example presented will not necessarily always perform more accurately on listings in the "real world". You should use your intution about what features might be correlated with higher/lower Airbnb prices when determining your choice.</div>
+                <p>You are free to navigate to these instructions or the <a href="{{url_for('data_dictionary', _scheme='https', _external=True) }}">data dictionary</a> using the buttons in the upper right of the interface as necessary to determine which algorithm you think will perform better in the real world. Also, each example may have a different number of important features shown (bars in the bar chart).</p>
+                <p>An example of the interface for a single example can be seen below. 👇</p>
+            </div>
+            <hr class="uk-divider-icon uk-margin-remove-bottom " style="height: 5em">
+            <h4 class="uk-margin-remove-top">Interface</h4>
+            <img alt="screen shot of the user interface for the experiment" id="screenshot" src="https://static.machina.run/interface.png" style="padding-top: 1em; box-shadow: 0 0 1em;">
+            <div style="height: 1em"></div>
+        </div>
+    </div>
+    <br>
+{% endblock %}

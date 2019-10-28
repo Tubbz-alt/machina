@@ -1,0 +1,131 @@
+{% extends 'base.html.j2' %}
+
+{% block title %}Data Dictionary{% endblock %}
+
+{% block content %}
+    <div class="uk-container uk-container-large">
+        {# nav bar #}
+        <div class="uk-margin-top uk-margin-bottom uk-child-width-expand@s" uk-grid="uk-grid">
+            <div style="display: flex; align-items: center;">
+                <h2>Data Dictionary</h2>
+            </div>
+            <div class="uk-flex-right" style="display: flex; align-items: center;">
+                <div class="uk-flex uk-flex-right">
+                    <div>
+                        {% if trial.get('index') is not none %}
+                            <a class="uk-button uk-button-primary uk-margin-right uk-button-small" href="{{url_for('example', index=trial['index'] + 1, _scheme='https', _external=True) }}">Resume HIT</a>
+                        {% else %}
+                            <a class="uk-button uk-button-primary uk-margin-right uk-button-small" href="{{url_for('instructions', _scheme='https', _external=True) }}">Instructions</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# navbar end #}
+        <br />
+        <dl class="uk-description-list uk-description-list-divider">
+            <dt><span class='uk-text-bold'>Description Length (# of words)</span></dt>
+            <dd>Number of words in the listing description (as provided by the host) on Airbnb.com.</dd>
+            <dt><span class='uk-text-bold'>Extra Guest Cost ($)</span></dt>
+            <dd>Number of dollars extra charge per each additional guests more than the <span class='uk-text-bold'># of Guests Included</span>. For more information see Airbnb's <a target="_blank" href='https://community.withairbnb.com/t5/Tips-Tutorials/Extra-Guest-Fee-A-Community-Help-Guide-UPDATE/m-p/413570'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'># of Guests Included</span></dt>
+            <dd>Number of guests included in the listed rental price.</dd>
+            <dt><span class='uk-text-bold'>Host Response Time</span></dt>
+            <dd>The average amount of time that it took for a host to respond to all new messages in the past 30 days. One of:
+                <ul>
+                    <li>within a day</li>
+                    <li>within an hour</li>
+                    <li>within a few hours</li>
+                    <li>a few days or more</li>
+                </ul>
+                
+                For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/430/what-are-response-rate-and-response-time-and-how-are-they-calculated'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Is Superhost</span></dt>
+            <dd>Binary indicator of Airbnb <a target="_blank" href='https://www.airbnb.com/superhost'>Superhost</a> status: 
+                <ul>
+                    <li>Hosts that have completed at least 10 trips OR successfully completed 3 reservations that total at least 100 nights</li>
+                    <li>Hosts that maintain a 90% response rate or higher</li>
+                    <li>Hosts that maintain a 1% cancellation rate or lower</li>
+                    <li>Hosts that maintain a 4.8 overall rating or higher</li>
+                </ul>
+            </dd>
+            <dt><span class='uk-text-bold'>Host Has Profile Picture</span></dt>
+            <dd>Binary indicator of whether or not the host has a profile picture.</dd>
+            <dt><span class='uk-text-bold'>Room Type</span></dt>
+            <dd>The type of room or home for the listing. One of:
+                <ul>
+                    <li>Entire place</li>
+                    <li>Private room</li>
+                    <li>Shared room</li>
+                </ul>
+
+                For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/5/what-does-the-room-type-of-a-listing-mean'>help guide</a>
+            </dd>
+            {# <dt><span class='uk-text-bold'>Bed Type</span></dt>
+            <dd>Type of bed, one of: 
+                <ul>
+                    <li>Real Bed</li>
+                    <li>Pull-out Sofa</li>
+                    <li>Airbed</li>
+                    <li>Futon</li>
+                    <li>Couch</li>
+                </ul>
+            </dd> #}
+            <dt><span class='uk-text-bold'>Instant Bookable</span></dt>
+            <dd>Instant Book listings don't require approval from the host before they can be booked. Instead, guests can just choose their travel dates, book, and discuss check-in plans with the host. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/523/what-is-instant-book'>help guide</a>.</dd>
+            {# <dt><span class='uk-text-bold'>Is Business Travel Ready</span></dt>
+            <dd>sdfg</dd>
+            <dt><span class='uk-text-bold'>Requires Guest Profile Picture</span></dt>
+            <dd>sdg</dd>
+            <dt><span class='uk-text-bold'>Requires Guest Phone Verification</span></dt>
+            <dd>dfg</dd> #}
+            <dt><span class='uk-text-bold'>Amenities</span></dt>
+            <dd>Amenities available at or included in the listing. Each column that begins with <span class='uk-text-bold'>Amenities:</span> is a binary variable that indicates whether or not a listing includes the amenity. For example, the column <span class='uk-text-bold'>Amenity: Air Conditioning</span> is <span class='uk-text-uppercase'>True</span> if the listing has air conditioning and <span class='uk-text-uppercase'>False</span> if it does not have air conditioning. Since each of these columns is simply an indicator of whether or not an amenity is present, each data example will show all of the possible <span class='uk-text-bold'>Amenities:</span> columns from the entire dataset regardless of whether or not that amenity is present.</dd>
+            {# <dt><span class='uk-text-bold'>Host Verifications</span></dt>
+            <dd>dfg</dd> #}
+            <dt><span class='uk-text-bold'># of Bathrooms</span></dt>
+            <dd>The number of bathrooms in the listing.</dd>
+            <dt><span class='uk-text-bold'># of Bedrooms</span></dt>
+            <dd>The number of bedrooms in the listing.</dd>
+            <dt><span class='uk-text-bold'># of Beds</span></dt>
+            <dd>The number of beds (or furniture such as a futon that could be used as a bed) in the listing.</dd>
+            {# <dt><span class='uk-text-bold'>Accommodates</span></dt>
+            <dd>A calculated estimate of the number of guests a listing accomodates based on the number of bedrooms, number of beds, and listed sleeping arrangements.</dd> #}
+            <dt><span class='uk-text-bold'>Host's Account Age (days)</span></dt>
+            <dd>The age of the host's Airbnb account in days. This may be older than the age of the listing itself if the host has created an account before posting the listing.</dd>
+            <dt><span class='uk-text-bold'>Host Listings Count</span></dt>
+            <dd>The number of total listings (including the listing shown) that the host has listed on Airbnb.</dd>
+            <dt><span class='uk-text-bold'>Host Response Rate (%)</span></dt>
+            <dd>The percentage of new inquiries and reservation requests that the host has responded to (by either accepting/pre-approving or declining) within 24 hours in the past 30 days. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/430/what-are-response-rate-and-response-time-and-how-are-they-calculated'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Security Deposit ($)</span></dt>
+            <dd>Some hosts require a security deposit for their listing. If a guest is booking a listing with a host-required security deposit, they will be shown this amount before making the reservation and only be charged if the host makes a claim on the security deposit. If there’s an issue during the stay, the host can report an incident and submit a claim for some or all of the security deposit within 14 days of check-out or before a new guest checks in (whichever happens first). For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/140/how-does-airbnb-handle-security-deposits'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Cleaning Fee ($)</span></dt>
+            <dd>One-time fee charged by the host to cover the cost of cleaning their space.</dd>
+            <dt><span class='uk-text-bold'>Minimum Nights Required</span></dt>
+            <dd>The minimum number of nights a guest is required to book the listing for.</dd>
+            <dt><span class='uk-text-bold'>Maximum Nights Allowed</span></dt>
+            <dd>The maximum number of nights a guest is allowed to book the listing for.</dd>
+            {# <dt><span class='uk-text-bold'>Availability (days per year)</span></dt>
+            <dd></dd> #}
+            {# <dt><span class='uk-text-bold'>Reviews: Overall</span></dt>
+            <dd>The percentage of new inquiries and reservation requests the host responded to (by either accepting/pre-approving or declining) within 24 hours in the past 30 days. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/1257/how-do-star-ratings-work'>help guide</a>.</dd> #}
+            <dt><span class='uk-text-bold'>Reviews: Accuracy</span></dt>
+            <dd>The averge score of reviews from guests about how accurately the listing page represented the space. Scaled from Airbnb's 5-star rating to a numeric range of 0-10. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/1257/how-do-star-ratings-work'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Reviews: Cleanliness</span></dt>
+            <dd>The averge score of reviews from guests about how clean and tidy the space was. Scaled from Airbnb's 5-star rating to a numeric range of 0-10. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/1257/how-do-star-ratings-work'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Reviews: Check-in</span></dt>
+            <dd>The averge score of reviews from guests about how smoothly the check-in went. Scaled from Airbnb's 5-star rating to a numeric range of 0-10. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/1257/how-do-star-ratings-work'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Reviews: Communication</span></dt>
+            <dd>The averge score of reviews from guests about how well the host communicated with the guest before and during the stay. Scaled from Airbnb's 5-star rating to a numeric range of 0-10. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/1257/how-do-star-ratings-work'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Reviews: Location</span></dt>
+            <dd>The averge score of reviews from guests about they felt about the neighborhood the listing is located in. Scaled from Airbnb's 5-star rating to a numeric range of 0-10. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/1257/how-do-star-ratings-work'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Reviews: Value</span></dt>
+            <dd>The averge score of reviews from guests about whether they felt the listing provided good value for its price. Scaled from Airbnb's 5-star rating to a numeric range of 0-10. For more information see Airbnb's <a target="_blank" href='https://www.airbnb.com/help/article/1257/how-do-star-ratings-work'>help guide</a>.</dd>
+            <dt><span class='uk-text-bold'>Reviews per Month</span></dt>
+            <dd>The average number of reviews a listing receives per month.</dd>
+            <dt><span class='uk-text-bold'>Number of Reviews</span></dt>
+            <dd>The total number of reviews a listing has received as publicly listed on Airbnb.</dd>
+        </dl>
+        <br />
+        <br />
+{% endblock %}

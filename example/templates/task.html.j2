@@ -1,0 +1,68 @@
+{% extends 'base.html.j2' %}
+
+{% import 'explanation.html.j2' as explanation %}
+{% import 'measures.html.j2' as forms %}
+
+{% block title %}Example {{ example_num }}{% endblock %}
+
+{% block content %}
+    <div class="uk-container uk-container-large">
+        {# nav bar #}
+        <div class="uk-margin-top uk-margin-bottom uk-child-width-expand@s" uk-grid="uk-grid">
+            <div style="display: flex; align-items: center;">
+                <p class="uk-text-middle uk-text-large">Example 
+                <span class="uk-text-danger uk-text-bold"># {{ example_num }}</span> of 
+                <span class="uk-text-danger uk-text-bold">{{ example_tot }}</span>
+                </p>
+            </div>
+            <div>
+                <div class="uk-flex uk-flex-center">
+                    <div>
+                        <span class="uk-text-middle uk-text-bold uk-text-emphasis uk-text-primary" style="padding-right: 1em">True Price: </span>
+                        <span class="uk-text-middle uk-text-bold uk-text-primary" style="padding-left: 1em;">${{ label }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-flex-right" style="display: flex; align-items: center;">
+                <div class="uk-flex uk-flex-right">
+                    <div>
+                        <a class="uk-button uk-button-primary uk-margin-right uk-button-small" href="{{url_for('data_dictionary', _scheme='https', _external=True) }}">Dictionary</a>
+                        <a class="uk-button uk-button-secondary uk-margin-right uk-button-small" href="{{url_for('instructions', _scheme='https', _external=True) }}">Instructions</a>
+                        {# <a class="uk-button uk-button-primary uk-margin-right uk-button-small" href="/example/{{example_num + 1}}">Next</a> #}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# navbar end #}
+        <div class="uk-overflow-auto" id="features">
+            {# with table(className="uk-table uk-table-responsive uk-table-divider"): #}
+            <table class="uk-table uk-table-divider uk-table-small">
+                <thead>
+                    <tr>
+                        {% for name, value in features.items() %}
+                            <th class="uk-table-shrink" style="text-transform: none; font-size: 0.75em">
+                                {{name}}
+                            </th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    {% for name, value in features.items() %}
+                        <td>{{value}}</td>
+                    {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div class="uk-padding uk-section-muted">
+            <div class="uk-grid-divider" uk-grid="uk-grid">
+                {{ explanation.wrap(ex0, label, pred0, example_num * 2 - 1) }}
+                {{ explanation.wrap(ex1, label, pred1, example_num * 2) }}
+            </div>
+        </div>
+        <hr style="margin: 30px">
+        {{ forms.render(measures, example_num) }}
+    </div>
+{% endblock %}

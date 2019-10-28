@@ -1,0 +1,43 @@
+{% macro render(measures, example_num) -%}
+    <div class="uk-container uk-container-small">
+        <div id="measures">
+            <form class="uk-form-horizontal uk-margin-large" method="post" name="measures">
+                {{ measures.csrf_token }}
+                {% if measures.csrf_token.errors %}
+                    <div class="uk-alert-danger">You have submitted an invalid CSRF token</div>
+                {% endif %}
+                <div class="uk-flex-center" uk-grid>
+                    <div>
+                        {# <label class="uk-form-label uk-text-large uk-text-middle uk-text-uppercase uk-text-bold uk-text-emphasis" for="choice">Algorithm</label> #}
+                        <div uk-grid>
+                            {% for subfield in measures.choice %}
+                                <div>
+                                    <div class="uk-text-large uk-margin-large-right uk-text-uppercase uk-text-bold uk-text-emphasis">
+                                        {{ subfield(class_="uk-radio") }}
+                                        <label for="{{subfield.id}}">Algorithm {{ (example_num * 2) - 1 + loop.index0 }}</label>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="uk-flex-right">
+                        {{ measures.confidence(class_="uk-select") }}
+                    </div>
+                </div>
+                <div class="uk-text-center uk-margin-top" id='errors'>
+                    {% if measures.choice.errors %}
+                        {% for error in measures.choice.errors %}<div class="uk-alert-danger" uk-alert>{{ error }}</div>{% endfor %}
+                    {% endif %}
+                    {% if measures.confidence.errors %}
+                        {% for error in measures.confidence.errors %}<div class="uk-alert-danger" uk-alert>{{ error }}</div>{% endfor %}
+                    {% endif %}
+                </div>
+                <br />
+                <div class="uk-text-center">
+                    <input class="uk-button uk-button-primary" id="submit_btn" name="submit_btn" type="submit" uk-toggle="target: #alg1; mode: hover; cls: uk-button-danger" value="SUBMIT">
+                </div>
+                <br>
+          </form>
+        </div>
+    </div>
+{%- endmacro %}

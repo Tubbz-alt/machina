@@ -1,0 +1,16 @@
+{% extends 'base.html.j2' %}
+
+{% block title %}Instructions{% endblock %}
+
+{% block content %}
+<div class="uk-container">
+    <h1>Instructions</h1>
+    {% include 'hit_desc.html' %}
+    <div class="uk-flex uk-flex-center">
+        <form action="/assign" method="post">
+            <button class="uk-button uk-button-danger uk-button-large" id="begin-experiment">Begin HIT</button>
+        </form>
+    </div>
+    <div style="height: 5em"></div>
+</div>
+{% endblock %}

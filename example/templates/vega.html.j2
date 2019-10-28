@@ -1,0 +1,15 @@
+{% macro wrap(chart, id) -%}
+    <div class="chart">
+        <div>
+            <div class="uk-width-expand" id="_{{id}}"></div>
+            <script>
+                window.addEventListener("load", function() {
+                    var _{{id}}_spec = {{ chart.to_json() }};
+                    _{{id}}_spec["config"]["view"]["width"] = document.getElementById("_{{id}}").clientWidth;
+                    var _{{id}}_opt = {"renderer": "canvas", "actions": false};
+                    vegaEmbed("#_{{id}}", _{{id}}_spec, _{{id}}_opt);
+                });
+            </script>
+        </div>
+    </div>
+{%- endmacro %}

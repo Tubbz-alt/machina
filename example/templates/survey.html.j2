@@ -1,0 +1,90 @@
+{% extends 'base.html.j2' %}
+
+{% block title %}Survey{% endblock %}
+
+{% block content %}
+    <div class="uk-container uk-container-small">
+    <div style="margin-bottom: 3em"></div>
+        <h2>Final Survey</h2>
+        <form action="{{submit_url}}" class="uk-form-stacked" method="post" name="survey">
+            {{ survey.csrf_token }}
+            {% if survey.csrf_token.errors %}
+                <div class="uk-alert-danger">You have submitted an invalid CSRF token</div>
+            {% endif %}
+            <input name="assignmentId" type="hidden" value="{{trial['assignmentId']}}">
+            <input name="hitId" type="hidden" value="{{trial['hitId']}}">
+            <input name="workerId" type="hidden" value="{{trial['workerId']}}">
+            <input name="token" type="hidden" value="{{trial['token']}}">
+
+            <div class="uk-margin">
+                <p class="uk-background-muted uk-padding-small">What is the <span class='uk-text-bold uk-text-danger'>highest degree</span> or level of school you have <span class='uk-text-bold uk-text-danger'>completed</span>? (If you’re currently enrolled in school, please indicate the highest degree you have received.)</p>
+                <div class="uk-form-controls">
+                    {{ survey.education(class_="uk-select") }}
+                </div>
+            </div>
+            <br />
+
+            <div class="uk-margin">
+                <p class="uk-background-muted uk-padding-small">Have you completed any <span class='uk-text-bold uk-text-danger'>courses</span> or <span class='uk-text-bold uk-text-danger'>coursework</span> (tutorials, workshops, online materials, etc.) that involve concepts related to <span class='uk-text-primary uk-text-bold'>Computer Science</span>, <span class='uk-text-primary uk-text-bold'>Programming</span>, or <span class='uk-text-primary uk-text-bold'>Software Engineering</span>?</p>
+                <div class="uk-form-controls">
+                    {{ survey.computer_knowledge(class_="uk-select") }}
+                </div>
+            </div>
+            <br />
+
+            <div class="uk-margin">
+                <p class="uk-background-muted uk-padding-small">Do you have any <span class='uk-text-bold uk-text-danger'>professional experience</span> with <span class='uk-text-primary uk-text-bold'>Computer Science</span>, <span class='uk-text-primary uk-text-bold'>Programming</span>, or <span class='uk-text-primary uk-text-bold'>Software Engineering</span>?</p>
+                <div class="uk-form-controls">
+                    {{ survey.computer_experience(class_="uk-select") }}
+                </div>
+            </div>
+            <br />
+
+            <div class="uk-margin">
+                <p class="uk-background-muted uk-padding-small">Have you completed any <span class='uk-text-bold uk-text-danger'>courses</span> or <span class='uk-text-bold uk-text-danger'>coursework</span> (tutorials, workshops, online materials, etc.) that involve concepts related to <span class='uk-text-warning uk-text-bold'>Artificial Intelligence</span>, <span class='uk-text-warning uk-text-bold'>Machine Learning</span>, <span class='uk-text-warning uk-text-bold'>Data Analysis</span>, or <span class='uk-text-warning uk-text-bold'>Statistics</span>?</p>
+                <div class="uk-form-controls">
+                    {{ survey.data_knowledge(class_="uk-select") }}
+                </div>
+            </div>
+            <br />
+
+            <div class="uk-margin">
+                <p class="uk-background-muted uk-padding-small">Do you have any <span class='uk-text-bold uk-text-danger'>professional experience</span> with <span class='uk-text-warning uk-text-bold'>Artificial Intelligence</span>, <span class='uk-text-warning uk-text-bold'>Machine Learning</span>, <span class='uk-text-warning uk-text-bold'>Data Analysis</span>, or <span class='uk-text-warning uk-text-bold'>Statistics</span>?</p>
+            <div class="uk-form-controls">
+                    {{ survey.data_experience(class_="uk-select") }}
+                </div>
+            </div>
+            
+            <hr class="uk-divider-icon " style="height: 3em">
+
+            <h3>HIT Feedback</h3>
+            {{survey.feedback(class_="uk-textarea", rows='5')}}
+            <div class="uk-text-center uk-margin-large-top">
+                <input class="uk-button uk-button-primary" id="submit_btn" type="submit" uk-toggle="target: #alg1; mode: hover; cls: uk-button-danger" value="FINISH HIT">
+            </div>
+        </form>
+        <div style="margin-bottom: 3em"></div>
+          <script>
+            const form = document.forms.survey;
+
+            form.addEventListener("submit", function (event) {              
+                if (form.reportValidity()) {
+                        event.preventDefault();    
+                        var xhr = new XMLHttpRequest();
+                        xhr.addEventListener("load", function(e){
+                            if (xhr.status == 200) {    
+                                form.submit();
+                            } 
+                        });
+
+                        xhr.open("POST", "/survey");
+                        xhr.send(new FormData(form)); 
+                }
+            })
+        </script>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+

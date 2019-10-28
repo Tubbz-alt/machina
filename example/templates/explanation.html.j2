@@ -1,0 +1,33 @@
+{% import 'vega.html.j2' as vega %}
+
+{% macro wrap(chart, label, prediction, id) -%}
+    <div class="uk-width-1-2">
+        <div class="uk-flex uk-flex-center">
+            <h3>Algorithm {{ id }}</h3>
+        </div>
+        <br>
+        <div>
+            <div class="uk-grid" uk-grid="uk-grid">
+                <div class="uk-width-expand">
+                    <h5 class="uk-text-bold">Features that Algorithm {{id}} considers important:</h5>
+                    {{ vega.wrap(chart, id) }}
+                </div>
+                <div class="uk-width-1-6">
+                    {# <span class="uk-text-middle uk-text-bold uk-text-emphasis" style="padding-right: 1em">True Price: </span>
+                    <span class="uk-text-middle" style="padding-left: 1em">{{ label }}</span> #}
+                    <h5 class="uk-text-bold" style="margin-bottom:0">Predicted</h5>
+                    <div>
+                        <span style="font-weight:bold">${{ prediction|round(2) }}</span>
+                    </div>
+                    <div style="height: 1em"></div>
+                    <div>
+                        <h5 class="uk-text-bold" style="color:red; margin-bottom:0">Error</h5>
+                        <div>
+                            <span style="color:red; font-weight:bold">{{'+' if (prediction - label) > 0 else '-'}}${{ (prediction - label)|abs|round(2) }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}

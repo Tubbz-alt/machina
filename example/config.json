@@ -1,0 +1,35 @@
+{
+    "title": "Non-expert opinion about algorithm predictions on Airbnb listings",
+    "description": "You will be presented with a series of examples of Airbnb listings and for each example you will be shown a prediction from two different algorithms. Your goal is to select the algorithm whose predictions you think will be more accurate on new examples and which make the most sense to you.",
+    "keywords": "survey, algorithm, ai, machine learning",
+    "reward": "2.0",
+    "qualifications": [
+        {
+            "QualificationTypeId": "00000000000000000071",
+            "Comparator": "EqualTo",
+            "LocaleValues": [
+                {
+                    "Country": "US"
+                }
+            ],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        },
+        {
+            "QualificationTypeId": "000000000000000000L0",
+            "Comparator": "GreaterThan",
+            "IntegerValues": [
+                98
+            ],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        },
+        {
+            "QualificationTypeId": "00000000000000000040",
+            "Comparator": "GreaterThan",
+            "IntegerValues": [
+                100
+            ],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        }
+    ],
+    "seed": 18
+}

@@ -1,0 +1,22 @@
+{% extends 'base.html.j2' %}
+
+{% block title %}Instructions{% endblock %}
+
+{% block content %}
+    <div class="uk-container uk-container-large">
+        {# nav bar #}
+        <div class="uk-margin-top uk-margin-bottom uk-child-width-expand@s" uk-grid="uk-grid">
+            <div style="display: flex; align-items: center;">
+                <h2>Instructions</h2>
+            </div>
+            <div class="uk-flex-right" style="display: flex; align-items: center;">
+                <div class="uk-flex uk-flex-right">
+                    <div>
+                        <a class="uk-button uk-button-primary uk-margin-right uk-button-small" href="{{url_for('example', index=trial['index'] + 1, _scheme='https', _external=True) }}">Resume HIT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# navbar end #}
+        {% include 'hit_desc.html' %}
+{% endblock %}
