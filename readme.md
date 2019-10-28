@@ -31,11 +31,7 @@ Machina automates the boring stuff and stays out of your way when it comes to th
 * Follow the **[tutorial](docs/tutorial.md)**!!
 * Checkout the **[examples](examples/readme.md)**!!!
 
-<br>
-
 If you want to learn about our research on/with machina, all the gory details are included in the following paper: [probably an arXiv link]...
-
-> machina is compatible with Python 3.x
 
 <!-- ## What magic is this?!?!
 
@@ -64,17 +60,7 @@ machina
 More than the development gains from using the library, we feel that these abstractions we present in the framework are a beneficial way to think about human subjects experiments involving machine learning (or any complex stochastic system).
 
 - **Interdisciplinary collaboration** for explainable AI research through model/method, data, and experiment sharing and remixing.
-  <!-- - share models, UI components, and data (like cleverhans)
-  - remix experiments
-  - cross languagte with thrift or 0mq? -->
 - **Reproducible research** through serialized experiments with standardized taks, datasets, interfaces, and measures.
-  <!-- - dataset API
-  - set tasks
-  - lineage and versioning
-  - experiment "compiler" to render experiment as static site — with unique hashed adress "password"
-  - common metrics/measures
-  - enable cross comparisons
-  - "we used ml-experiments version ... to achieve ... on the ... task" -->
 - **Portability** enabling anyone anywhere to rerun your experiment on any platform with any participants.
 - **Consistent** encode best practices of running ML human subjects experiments in the framework itself so you don't have to worry you checked all the boxes. (and helpful for onboarding new experimenters!)
 - **Automate the boring stuff** to lower the floor and raise the ceiling of explainable AI research... allowing you to focus on what's fun and impactful.
@@ -83,27 +69,23 @@ More than the development gains from using the library, we feel that these abstr
     - Building an interactive ML application? Use the web framework and UI components (and get serilaization for free).
     - Running user experiment with an existing application? Use the experimentation utilities to design the study and assign users to variants (and get statistical bookkeeping an analysis for free).  
 - **Always open, always [free](https://mako.cc/writing/hill-free_tools.html)**
-  <!-- - only open source tools, no vendor lock in
-  - open data, you own your data
-  - peer to peer network. help with experiments and share experiments -->
 
 ## Features
 
 - Reference implementations of common XAI explainers and state of the art methods to compare against.
-- experiment "compiler" to render experiment as static site — with unique hashed adress "password"
 - Common interpretable benchmark datasets and synthetic data generators across modalities (tabular, text, image, etc.) in a consistent data loading format.
 - Standardized measures to record how humans interact with your experiment and built-in logging.
 - Consistent class interfaces to enable seamless multitasking over datasets, models, and explainers making comprehensive evaluation a breeze.
 - MTurk automation, experiment data logging, and hosting of results.
+- Experiment serialization and versioning to snapshot experiment parameters, interfaces, and model state to facilitate reproduction or remixing.
+
+<!-- - Experiment "compiler" to render experiment as static site — with unique hashed address "password"
 - All Python. All the Time. Declarative Python components to reduce context switching and ease the development of interactive interfaces. 
 - Dynamic web application creation to run experiments following the principle of convention over configuration.
-<!-- - Built-in web application infrastructure with isomorphic/transparent client-server communication. Just bring your model and we provide the rest! -->
-- Experiment serialization and versioning to snapshot experiment parameters, interfaces, and model state to facilitate reproduction or remixing.
 - Typed classes enabling static analysis to catch errors before you run your experiment.
 - Hot reloading for interactive debugging of ML applications.
 - Cross language applications powered by Apache Arrow serilaization, ONNX exchange format, and PMML?
-- Supports serialization of arbitrary objects, functions, and lambdas with `cloudpickle`
-
+- Supports serialization of arbitrary objects, functions, and lambdas with `cloudpickle` -->
 
 ## One explainy boi
 <!-- 
@@ -114,6 +96,8 @@ More than the development gains from using the library, we feel that these abstr
 See the full annotated and runnable example code [here](example).
 
 ## Installation
+
+> :warning: `machina` is compatible with Python 3.x
 
 ### Recommended
 
