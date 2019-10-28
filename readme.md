@@ -219,7 +219,7 @@ Talk to [@jonathandinu](https://twitter.com/jonathandinu)
 - pandas
 - numpy
 - boto
-- dominate
+
 <!-- 
 ## TODO (roughly in order of priority)
 
