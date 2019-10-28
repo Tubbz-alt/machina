@@ -3,12 +3,10 @@
 > A familiar, full stack (yet lightweight) framework for digital experimentation, human orchestration, and interactive machine learning applications.
 
 Machina combines an intuitive **experimentation framework** (think A/B tests) with flexible **human-in-the-loop orchestration** to support and accelerate interactive ML research with a focus on *consistency*, *reproducibility*, and *experimentation*. We make it so easy to evaluate your new algorithm with ✨real humans✨... you'd be foolish not to! 
-<br>
-<br>
-
-Machina automates the boring stuff and stays out of your way when it comes to the fun/interesting stuff. The framework combines an intuitive Flask-like web framework, built-in deployment and devops functionality, and Mechanical Turk management/orchestration. Specifically it provides utilities for adaptive experimentation, metrics and measures, templates and UI, data storage, participant management and authorization, experiment serialization and replication, application deployment, MTurk orchestration, a monitoring/admin dashboard, and statistical analysis helpers.  
 
 <hr> 
+
+Machina automates the boring stuff and stays out of your way when it comes to the fun/interesting stuff. The framework combines an intuitive Flask-like web framework, built-in deployment and devops functionality, and Mechanical Turk management/orchestration. Specifically it provides utilities for adaptive experimentation, metrics and measures, templates and UI, data storage, participant management and authorization, experiment serialization and replication, application deployment, MTurk orchestration, a monitoring/admin dashboard, and statistical analysis helpers.  
 
 **Use machina if you want:**
 * Amazon Mechanical Turk automation and human orchestration for intelligent human-in-the-loop systems
@@ -29,7 +27,7 @@ Machina automates the boring stuff and stays out of your way when it comes to th
 **To get started:**
 * Read the **[documentation](docs/readme.md)**!
 * Follow the **[tutorial](docs/tutorial.md)**!!
-* Checkout the **[examples](examples/readme.md)**!!!
+* Checkout the **[example](example)**!!!
 
 If you want to learn about our research on/with machina, all the gory details are included in the following paper: [probably an arXiv link]...
 
