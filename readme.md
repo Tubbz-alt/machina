@@ -183,7 +183,8 @@ Talk to [@jonathandinu](https://twitter.com/jonathandinu)
   and budgeted designs for adaptive experimentation on crowd marketplaces},
   url = {https://github.com/hopelessoptimism/machina},
   version = {0.0.1},
-  year = {2019},
+  month = {Oct},
+  year = {2019}
 }
 ```
 
@@ -193,13 +194,12 @@ Talk to [@jonathandinu](https://twitter.com/jonathandinu)
 
 ## Standing on the shoulders of giants...
 
-- SQLite
-- peewee
-- Flask
-- scikit-learn
-- pandas
-- numpy
-- boto
+- [Flask](https://palletsprojects.com/p/flask/)
+- [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [peewee](http://docs.peewee-orm.com/en/latest/)
+- [SQLite](https://www.sqlite.org/index.html)
+- [numpy](https://numpy.org/)
+- [pandas](https://pandas.pydata.org/)
 
 <!-- 
 ## TODO (roughly in order of priority)
