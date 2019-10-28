@@ -196,9 +196,10 @@ Talk to [@jonathandinu](https://twitter.com/jonathandinu)
 ## Citation
 
 ```
-@software{hadoop,
+@software{machina,
   author = {{Jonathan Dinu}},
-  title = {Machina: A declarative framework for efficient lifelong experiments and budgeted designs for adaptive experimentation on crowd marketplaces},
+  title = {Machina: A declarative framework for efficient lifelong experiments 
+  and budgeted designs for adaptive experimentation on crowd marketplaces},
   url = {https://github.com/hopelessoptimism/machina},
   version = {0.0.1},
   year = {2019},
