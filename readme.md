@@ -94,7 +94,7 @@ See the full annotated and runnable example code [here](example).
 
 ## Installation
 
-> :warning: `machina` is compatible with Python 3.x
+> :warning: Compatible with Python 3.x
 
 ### Recommended
 
